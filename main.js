@@ -29,11 +29,11 @@ function handleInput(key) {
     if (key === character) {
         score += 1;
         console.log("Score: " + score);
+        speed += 1;
         displayCharacter();
     } else {
         endGame();
     }
-    speed += 1;
     resetTimeout();
 }
 
@@ -47,8 +47,10 @@ function resetTimeout() {
 function endGame() {
     stdin.setRawMode(false);
     stdin.pause();
+    stdin.removeListener('data', handleInput);
     console.log("Game over");
     console.log("Final score: " + score);
+    process.exit();
 }
 
 displayCharacter();
