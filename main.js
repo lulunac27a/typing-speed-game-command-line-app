@@ -1,7 +1,7 @@
 const readline = require('readline');//extension to read lines
 const { stdin, stdout } = process;//standard input and output
-let score = 0;//score
-let speed = 5;//speed
+let score = 0;//game score
+let speed = 5;//game speed
 let characterToType = '';//character to type
 const charactersList = 'abcdefghijklmnopqrstuvwxyz';//list of characters to type
 let time = null;//last time key was pressed
