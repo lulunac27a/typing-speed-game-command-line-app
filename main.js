@@ -2,7 +2,7 @@ const readline = require('readline');//extension to read lines
 const { stdin, stdout } = process;//standard input and output
 let score = 0;//score
 let speed = 5;//speed
-let character = '';//character output
+let characterToType = '';//character to type
 let charactersList = 'abcdefghijklmnopqrstuvwxyz';//list of characters to type
 let time = null;//last time key was pressed
 
@@ -14,8 +14,8 @@ function getRandomCharacter() {//function to generate random character
 }
 
 function displayCharacter() {//display character text
-    character = getRandomCharacter();//get random character
-    console.log("Current character: " + character);
+    characterToType = getRandomCharacter();//get random character
+    console.log("Current character: " + characterToType);
 }
 
 function setupInputListener() {
@@ -26,7 +26,7 @@ function setupInputListener() {
 }
 
 function handleInput(key) {//when key is pressed
-    if (key === character) {
+    if (key === characterToType) {
         score += 1;//increase score
         console.log("Score: " + score);
         speed += 1;//increase speed
