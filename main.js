@@ -26,12 +26,12 @@ function setupInputListener() {
 }
 
 function handleInput(key) {//when key is pressed
-    if (key === characterToType) {
+    if (key === characterToType) {//if key is correct
         score += 1;//increase score
         console.log("Score: " + score);
         speed += 1;//increase speed
         displayCharacter();
-    } else {
+    } else {//if key is incorrect
         endGame();//end the game
     }
     resetTimeout();
