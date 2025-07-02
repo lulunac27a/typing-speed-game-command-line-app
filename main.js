@@ -9,8 +9,8 @@ let time = null;//last time key was pressed
 console.log("Type the correct character to score a point");
 
 function getRandomCharacter() {//function to generate random character
-    let index = Math.floor(Math.random() * characters.length);//random index
-    return characters[index];//get random character from character set
+    let index = Math.floor(Math.random() * charactersList.length);//random index
+    return charactersList[index];//get random character from character set
 }
 
 function displayCharacter() {//display character text
