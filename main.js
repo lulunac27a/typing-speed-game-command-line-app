@@ -3,18 +3,18 @@ const { stdin, stdout } = process;//standard input and output
 let score = 0;//score
 let speed = 5;//speed
 let character = '';//character output
-let characters = 'abcdefghijklmnopqrstuvwxyz';//list of characters to type
+let charactersList = 'abcdefghijklmnopqrstuvwxyz';//list of characters to type
 let time = null;//last time key was pressed
 
 console.log("Type the correct character to score a point");
 
-function randomCharacter() {//function to generate random character
+function getRandomCharacter() {//function to generate random character
     let index = Math.floor(Math.random() * characters.length);//random index
     return characters[index];//get random character from character set
 }
 
 function displayCharacter() {//display character text
-    character = randomCharacter();//get random character
+    character = getRandomCharacter();//get random character
     console.log("Current character: " + character);
 }
 
