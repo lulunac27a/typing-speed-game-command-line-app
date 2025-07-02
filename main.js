@@ -3,7 +3,7 @@ const { stdin, stdout } = process;//standard input and output
 let score = 0;//score
 let speed = 5;//speed
 let characterToType = '';//character to type
-let charactersList = 'abcdefghijklmnopqrstuvwxyz';//list of characters to type
+const charactersList = 'abcdefghijklmnopqrstuvwxyz';//list of characters to type
 let time = null;//last time key was pressed
 
 console.log("Type the correct character to score a point");
