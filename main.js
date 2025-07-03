@@ -5,7 +5,6 @@ let speed = 5;//game speed
 let characterToType = '';//character to type
 const charactersList = 'abcdefghijklmnopqrstuvwxyz';//list of characters to type
 let time = null;//last time key was pressed
-
 console.log("Type the correct character to score a point");
 
 function getRandomCharacter() {//function to generate random character
@@ -22,7 +21,7 @@ function setupInputListener() {
     stdin.setRawMode(true);//use raw mode
     stdin.resume();
     stdin.setEncoding('utf8');
-    stdin.on('data', handleInput);//use data
+    stdin.on('data', handleInput);//handle input data
 }
 
 function handleInput(key) {//when key is pressed
