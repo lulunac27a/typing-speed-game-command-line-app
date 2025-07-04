@@ -14,7 +14,7 @@ console.log("3. Hard");
 console.log("4. Expert");
 const rl = readline.createInterface({ input: stdin, output: stdout });//create readline interface
 rl.on('line', (input) => {
-    switch (input) {
+    switch (input.toLowerCase()) {
         case '1', 'easy':
             gameMode = 'easy';
             charactersList = 'abcdefghijklmnopqrstuvwxyz';
