@@ -15,19 +15,19 @@ console.log("4. Expert");
 const rl = readline.createInterface({ input: stdin, output: stdout });//create readline interface
 rl.on('line', (input) => {
     switch (input) {
-        case '1':
+        case '1', 'easy':
             gameMode = 'easy';
             charactersList = 'abcdefghijklmnopqrstuvwxyz';
             break;
-        case '2':
+        case '2', 'medium':
             gameMode = 'medium';
             charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             break;
-        case '3':
+        case '3', 'hard':
             gameMode = 'hard';
             charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
             break;
-        case '4':
+        case '4', 'expert':
             gameMode = 'expert';
             charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_+-={}|[]\\:";\'<>?,./';
             break;
