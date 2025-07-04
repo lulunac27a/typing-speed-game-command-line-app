@@ -3,9 +3,38 @@ const { stdin, stdout } = process;//standard input and output
 let score = 0;//game score
 let speed = 5;//game speed
 let characterToType = '';//character to type
-const charactersList = 'abcdefghijklmnopqrstuvwxyz';//list of characters to type
+let gameMode = 'easy'//game mode
+let charactersList = gameMode === 'easy' ? 'abcdefghijklmnopqrstuvwxyz' : gameMode === 'medium' ? 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' : gameMode === 'hard' ? 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' : gameMode === 'expert' ? 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_+-={}|[]\\:";\'<>?,./' : 'abcdefghijklmnopqrstuvwxyz';//list of characters to type based on game mode
 let time = null;//last time key was pressed
 console.log("Type the correct character to score a point");
+console.log("Select game mode:");
+console.log("1. Easy");
+console.log("2. Medium");
+console.log("3. Hard");
+console.log("4. Expert");
+const rl = readline.createInterface({ input: stdin, output: stdout });//create readline interface
+rl.on('line', (input) => {
+    switch (input) {
+        case '1':
+            gameMode = 'easy';
+            charactersList = 'abcdefghijklmnopqrstuvwxyz';
+            break;
+        case '2':
+            gameMode = 'medium';
+            charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            break;
+        case '3':
+            gameMode = 'hard';
+            charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            break;
+        case '4':
+            gameMode = 'expert';
+            charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_+-={}|[]\\:";\'<>?,./';
+            break;
+    }
+    displayCharacter();
+    setupInputListener();
+});
 
 function getRandomCharacter() {//function to generate random character
     let index = Math.floor(Math.random() * charactersList.length);//random index
