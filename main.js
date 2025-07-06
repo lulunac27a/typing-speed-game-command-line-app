@@ -73,7 +73,7 @@ function resetTimeout() {//reset timeout
 }
 
 function endGame() {//end the game
-    stdin.setRawMode(false);
+    stdin.setRawMode(false);//disable raw mode
     stdin.pause();
     stdin.removeListener('data', handleInput);
     console.log("Game over");
