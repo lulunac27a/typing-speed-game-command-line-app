@@ -14,26 +14,26 @@ console.log("3. Hard");
 console.log("4. Expert");
 const rl = readline.createInterface({ input: stdin, output: stdout });//create readline interface
 rl.on('line', (input) => {
-    switch (input.toLowerCase()) {
-        case '1', 'easy':
+    switch (input.toLowerCase()) {//use lowercase for input
+        case '1', 'easy'://easy game mode
             gameMode = 'easy';
             charactersList = 'abcdefghijklmnopqrstuvwxyz';
             break;
-        case '2', 'medium':
+        case '2', 'medium'://medium game mode
             gameMode = 'medium';
             charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             break;
-        case '3', 'hard':
+        case '3', 'hard'://hard game mode
             gameMode = 'hard';
             charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
             break;
-        case '4', 'expert':
+        case '4', 'expert'://expert game mode
             gameMode = 'expert';
             charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_+-={}|[]\\:";\'<>?,./';
             break;
     }
-    displayCharacter();
-    setupInputListener();
+    displayCharacter();//display random character
+    setupInputListener();//setup input listener
 });
 
 function getRandomCharacter() {//function to generate random character
@@ -46,7 +46,7 @@ function displayCharacter() {//display character text
     console.log("Current character: " + characterToType);
 }
 
-function setupInputListener() {
+function setupInputListener() {//setup input listener
     stdin.setRawMode(true);//use raw mode
     stdin.resume();
     stdin.setEncoding('utf8');
