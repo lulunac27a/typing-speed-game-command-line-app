@@ -1,4 +1,4 @@
-const readline = require('readline');//extension to read lines
+const readline = require('readline');//extension to read line input and output
 const { stdin, stdout } = process;//standard input and output
 let score = 0;//game score
 let speed = 5;//game speed
