@@ -63,7 +63,8 @@ function setupInputListener() {//setup input listener
 
 function handleInput(key) {//when key is pressed
     if (key === characterToType) {//if key is correct
-        score += speed * difficultyMultiplier;//increase score
+        score += (speed * difficultyMultiplier / (performance.now() - lastKeyPressedTime) + 1000);//increase score
+        lastKeyPressedTime = performance.now();//update last time key was pressed
         console.log("Score: " + score);
         speed += 1;//increase speed
         keys += 1;//increase keys pressed correctly
