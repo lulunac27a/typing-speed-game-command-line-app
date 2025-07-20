@@ -1,7 +1,9 @@
 const readline = require('readline');//extension to read line input and output
+const { performance } = require('perf_hooks');//performance time
 const { stdin, stdout } = process;//standard input and output
 let score = 0;//game score
 let difficultyMultiplier = 1;//difficulty multiplier
+let lastKeyPressedTime = performance.now();//last time key was pressed
 let keys = 0;//number of keys pressed correctly
 let speed = 5;//game speed
 let characterToType = '';//character to type
