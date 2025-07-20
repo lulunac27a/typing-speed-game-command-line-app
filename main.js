@@ -80,6 +80,7 @@ function endGame() {//end the game
     stdin.removeListener('data', handleInput);
     console.log("Game over");
     console.log("Final score: " + score);
+    console.log("Keys pressed correctly: " + keys);
     process.exit();//exit the process
 }
 
