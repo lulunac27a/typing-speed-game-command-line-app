@@ -1,6 +1,7 @@
 const readline = require('readline');//extension to read line input and output
 const { stdin, stdout } = process;//standard input and output
 let score = 0;//game score
+let difficultyMultiplier = 1;//difficulty multiplier
 let keys = 0;//number of keys pressed correctly
 let speed = 5;//game speed
 let characterToType = '';//character to type
@@ -18,18 +19,22 @@ rl.on('line', (input) => {
     switch (input.toLowerCase()) {//use lowercase for input
         case '1', 'easy'://easy game mode
             gameMode = 'easy';
+            difficultyMultiplier = 1;
             charactersList = 'abcdefghijklmnopqrstuvwxyz';
             break;
         case '2', 'medium'://medium game mode
             gameMode = 'medium';
+            difficultyMultiplier = 2;
             charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             break;
         case '3', 'hard'://hard game mode
             gameMode = 'hard';
+            difficultyMultiplier = 3;
             charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
             break;
         case '4', 'expert'://expert game mode
             gameMode = 'expert';
+            difficultyMultiplier = 4;
             charactersList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_+-={}|[]\\:";\'<>?,./';
             break;
     }
@@ -56,7 +61,7 @@ function setupInputListener() {//setup input listener
 
 function handleInput(key) {//when key is pressed
     if (key === characterToType) {//if key is correct
-        score += 1;//increase score
+        score += speed * difficultyMultiplier;//increase score
         console.log("Score: " + score);
         speed += 1;//increase speed
         keys += 1;//increase keys pressed correctly
