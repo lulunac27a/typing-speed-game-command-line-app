@@ -1,6 +1,7 @@
 const readline = require('readline');//extension to read line input and output
 const { stdin, stdout } = process;//standard input and output
 let score = 0;//game score
+let keys = 0;//number of keys pressed correctly
 let speed = 5;//game speed
 let characterToType = '';//character to type
 let gameMode = 'easy'//game mode
@@ -58,6 +59,7 @@ function handleInput(key) {//when key is pressed
         score += 1;//increase score
         console.log("Score: " + score);
         speed += 1;//increase speed
+        keys += 1;//increase keys pressed correctly
         displayCharacter();
     } else {//if key is incorrect
         endGame();//end the game
