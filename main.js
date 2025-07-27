@@ -30,24 +30,28 @@ rl.on("line", (input) => {
     switch (
         input.toLowerCase() //use lowercase for input
     ) {
-        case ("1", "easy"): //easy game mode
+        case "1":
+        case "easy": //easy game mode
             gameMode = "easy";
             difficultyMultiplier = 1;
             charactersList = "abcdefghijklmnopqrstuvwxyz";
             break;
-        case ("2", "medium"): //medium game mode
+        case "2":
+        case "medium": //medium game mode
             gameMode = "medium";
             difficultyMultiplier = 2;
             charactersList =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             break;
-        case ("3", "hard"): //hard game mode
+        case "3":
+        case "hard": //hard game mode
             gameMode = "hard";
             difficultyMultiplier = 3;
             charactersList =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             break;
-        case ("4", "expert"): //expert game mode
+        case "4":
+        case "expert": //expert game mode
             gameMode = "expert";
             difficultyMultiplier = 4;
             charactersList =
