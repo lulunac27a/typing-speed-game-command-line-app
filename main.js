@@ -31,27 +31,27 @@ rl.on("line", (input) => {
         input.toLowerCase() //use lowercase for input
     ) {
         case "1":
-        case "easy": //easy game mode
+        case "easy": //easy game mode (1)
             gameMode = "easy";
             difficultyMultiplier = 1;
             charactersList = "abcdefghijklmnopqrstuvwxyz";
             break;
         case "2":
-        case "medium": //medium game mode
+        case "medium": //medium game mode (2)
             gameMode = "medium";
             difficultyMultiplier = 2;
             charactersList =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             break;
         case "3":
-        case "hard": //hard game mode
+        case "hard": //hard game mode (3)
             gameMode = "hard";
             difficultyMultiplier = 3;
             charactersList =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             break;
         case "4":
-        case "expert": //expert game mode
+        case "expert": //expert game mode (4)
             gameMode = "expert";
             difficultyMultiplier = 4;
             charactersList =
