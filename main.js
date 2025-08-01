@@ -57,6 +57,11 @@ rl.on("line", (input) => {
             charactersList =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_+-={}|[]\\:\";'<>?,./";
             break;
+        default: //defaults to easy game mode (1)
+            gameMode = "easy";
+            difficultyMultiplier = 1;
+            charactersList = "abcdefghijklmnopqrstuvwxyz";
+            break;
     }
     displayCharacter(); //display random character
     setupInputListener(); //setup input listener
